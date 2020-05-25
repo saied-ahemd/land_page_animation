@@ -1,0 +1,327 @@
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+.open{
+    display: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+.open .layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: top;
+    animation: open 1s ease-in-out forwards;
+
+}
+.open .layer:nth-child(1){
+    background: #000;
+    z-index: 2;
+}
+.open .layer:nth-child(2){
+    background: #039af4;
+    animation-delay: 1s;
+    z-index: 1;
+}
+@keyframes open{
+    0%{
+        transform: scaleY(1);
+    }
+    100%{
+        transform: scaleY(0);
+    }
+}
+section{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+.banner-text{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: 800px;
+
+}
+.banner-text h3,
+ h2{
+    display: block;
+    position: relative;
+    transform-origin: left;
+    margin: 0;
+    text-transform: uppercase;
+    padding: 0;
+    transform: scaleX(0);
+    animation: releave-text-reverse 1s step-start forwards;
+   
+   
+}
+ h2{
+    font-size: 6em;
+    animation-delay: 2s;
+
+}
+.banner-text h3{
+    font-size: 3em;
+    animation-delay: 3s;
+}
+h2::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    animation: releave-text 1s ease-in-out forwards;
+    transform-origin: right;
+    animation-delay: 2s;
+
+}
+.banner-text h3::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    animation: releave-text 1s ease-in-out forwards;
+    transform-origin: left;
+    animation-delay: 2.8s;
+}
+@keyframes releave-text{
+0%{
+    transform: scaleX(1);
+}
+100%{
+    transform: scaleX(0);
+}
+}
+@keyframes releave-text-reverse{
+    0%{
+        transform: scaleX(0);
+    }
+    100%{
+        transform: scaleX(1);
+    }
+}
+.banner-text p{
+    word-wrap: break-word;
+    display: block;
+    font-size: 1.2em;
+    font-weight: 400;
+    opacity: 0;
+    animation: fadein 1s linear forwards;
+    animation-delay: 4s;
+    z-index: 1001;
+}
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+ a{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    letter-spacing: 1.2;
+    opacity: 0;
+    animation: fadinbutton 0.5s linear forwards;
+    animation-delay: 4.5s;
+   
+    
+
+}
+@keyframes fadinbutton{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.lamp{
+    right: 20%;
+    top: 30%;
+    position: absolute;
+    animation: fadeinlamp 1s linear forwards;
+    animation-delay: 5s;
+    opacity: 0;
+    transform: translateY(-10%);
+    
+    
+
+}
+@keyframes fadeinlamp{
+    0%{
+        opacity: 0;
+        
+    }
+    100%{
+        opacity: 1;
+        
+    }
+}
+.header{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    letter-spacing: 1.2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    z-index: 100;
+}
+.header .logo{
+     /* opacity: 0; */
+     margin: 0;
+     padding: 0;
+     font-size: 2em;
+     text-transform: uppercase;
+     transform-origin: left;
+     font-weight: bold;
+
+
+}
+.header ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.header ul li{
+    list-style: none;
+    margin: 0 10px;
+    opacity: 0;
+    animation: fadinlogo 0.5s linear forwards;
+}
+@keyframes fadinlogo{
+    0%{
+        opacity: 0;
+        transform: translateX(150px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.header ul li:nth-child(1){
+    animation-delay: 5s;
+}
+.header ul li:nth-child(2){
+    animation-delay: 5.2s;
+}
+.header ul li:nth-child(3){
+    animation-delay: 5.4s;
+}
+.header ul li:nth-child(4){
+    animation-delay: 5.6s;
+}
+.header ul li:nth-child(5){
+    animation-delay: 5.8s;
+}
+.header ul li:last-child{
+    margin-right: 0;
+
+}
+.header ul li a{
+    background: #fff;
+    color: #000;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    margin: 0;
+
+}
+.header ul li a.active,.header ul li a:hover{
+    background: #000;
+    color: #fff;
+}
+.element1{
+    position: absolute;
+    bottom: -100px;
+    right: 40%;
+    width:250px;
+    height:250px;
+    border: 40px solid #000;
+    animation: route 40s linear infinite, fadein 1s linear forwards;
+    animation-delay: 6.5s;
+    opacity: 0;
+}
+.element2{
+    position: absolute;
+    left: -10px;
+    top: 40%;
+    width:50px;
+    height:50px;
+    border: 2px solid #000;
+    animation: route 30s linear infinite,fadein 1s linear forwards;
+    animation-delay: 6.5s;
+    opacity: 0;
+}
+@keyframes route{
+    0%{
+        opacity: 0;
+        transform: rotate(45deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotate(405deg);
+    }
+}
+@media (max-width:1380px){
+    section{
+        height: auto !important;
+        box-sizing: border-box;
+        padding: 100px;
+        display: initial;
+    }
+    .banner-text{
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 1001;
+        margin-top: 100px;
+        max-width: 700px;
+        transform: translateY(0);
+    }
+}
+@media (max-width:991px){
+    .banner-text h2{
+        font-size: 3em;
+        
+    }
+    .banner-text h3{
+        font-size: 1.5em;
+
+    }
+    .element1{
+        display: none;
+    }
+}
